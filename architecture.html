@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>技术方案与系统架构 · HeritageLens 作品集</title><style>
+:root{--teal:#0c4a52;--teal2:#147079;--accent:#1fa88f;--ink:#1a2b2e;--mut:#5b6f72;--line:#dce6e6;--bg:#f4f8f8;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
+.site-nav{background:linear-gradient(135deg,#0c4a52,#147079);color:#fff;position:sticky;top:0;z-index:999;box-shadow:0 2px 14px rgba(12,74,82,.25)}
+.sn-in{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;gap:26px;min-height:56px;flex-wrap:wrap}
+.sn-brand{font-weight:800;letter-spacing:.3px;font-size:16px;color:#fff;text-decoration:none;white-space:nowrap}
+.sn-brand span{color:#4fd1b5}
+.sn-links{display:flex;gap:4px;flex-wrap:wrap;overflow-x:auto}
+.sn-links a{color:#cfe6e4;text-decoration:none;font-size:13px;padding:6px 11px;border-radius:7px;white-space:nowrap;transition:.18s}
+.sn-links a:hover{background:rgba(255,255,255,.12);color:#fff}
+.sn-links a.on{background:rgba(255,255,255,.2);color:#fff;font-weight:700}
+.wrap{max-width:920px;margin:0 auto;padding:38px 24px 80px}
+.doc-hd{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:30px}
+.doc-hd .kicker{color:var(--accent);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+.doc-hd h1{font-size:27px;margin:8px 0 6px;color:var(--teal)}
+.doc-hd .meta{color:var(--mut);font-size:13px}
+.doc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:34px 40px;box-shadow:0 4px 24px rgba(12,74,82,.05)}
+.doc h1{font-size:24px;color:var(--teal);border-bottom:2px solid var(--line);padding-bottom:12px;margin-top:8px}
+.doc h2{font-size:20px;color:var(--teal2);margin-top:34px;border-left:4px solid var(--accent);padding-left:12px}
+.doc h3{font-size:17px;color:var(--teal);margin-top:26px}
+.doc h4{font-size:15px;color:var(--teal2)}
+.doc p,.doc li{font-size:14.5px;color:#2a3b3e}
+.doc li{margin:5px 0}
+.doc blockquote{background:#eef7f5;border-left:4px solid var(--accent);margin:16px 0;padding:12px 18px;border-radius:0 8px 8px 0;color:#35565a;font-size:14px}
+.doc blockquote p{margin:4px 0;color:#35565a}
+.doc code{background:#eef2f2;color:#b0392e;padding:1px 6px;border-radius:4px;font-size:12.5px;font-family:ui-monospace,Consolas,monospace}
+.doc pre{background:#12262a;color:#d6e8e6;padding:18px 20px;border-radius:10px;overflow-x:auto;font-size:12.5px;line-height:1.6}
+.doc pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px dashed var(--line);margin:26px 0}
+.tablewrap{overflow-x:auto;margin:16px 0}
+.doc table{border-collapse:collapse;width:100%;font-size:13px;min-width:520px}
+.doc th{background:var(--teal);color:#fff;padding:9px 12px;text-align:left;white-space:nowrap}
+.doc td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
+.doc tr:nth-child(even) td{background:#f7fafa}
+.doc a{color:var(--teal2)}
+.footer{text-align:center;color:var(--mut);font-size:12px;padding:30px 20px 50px;border-top:1px solid var(--line);margin-top:40px}
+.warn{background:#fff8e8;border:1px solid #f0d999;border-radius:10px;padding:14px 18px;font-size:13px;color:#7a5b12;margin-bottom:22px}
+</style></head><body>
+<nav class="site-nav"><div class="sn-in">
+<a class="sn-brand" href="index.html">HL<span>·</span>作品集</a>
+<div class="sn-links"><a href="index.html">项目主页</a><a href="demo.html">交互演示</a><a href="workbench.html">前端工作台</a><a href="backend.html">后端源码</a><a href="prd.html">产品 PRD</a><a href="architecture.html">技术方案</a><a href="testing.html">测试验证</a><a href="star.html">项目总结</a></div>
+</div></nav>
+<div class="wrap">
+<div class="doc-hd"><div class="kicker">TECH · ARCHITECTURE</div><h1>技术方案与系统架构</h1><div class="meta">系统设计 ｜ 能力边界 / 适配层 / 推理算法 / 数据流</div></div>
+<div class="warn">📌 本文档为课程项目作品集材料，含<span style="font-weight:700">规划/草案</span>与<span style="font-weight:700">现状</span>两类内容，凡标注「目标值 / 待实测 / 规划」的数字均非已达成成果。演示页数据为预置模拟。</div>
+<div class="doc"><h1>第五阶段：AI 技术方案与系统架构设计（v0.1 草案）</h1>
+<blockquote><p><strong>文档性质</strong>：技术方案规划，非已完成代码。标注 <code>[现状]</code> / <code>[规划]</code>。 <strong>约束先行</strong>（决定一切选型）：无 GPU（CPU 推理）· C 盘紧张（一切装 D 盘）· 照片不出本机（全 localhost，0 外部请求）· 用户非科班（用 AI 辅助编程生成脚手架，但架构/选型/PRD 由本人定）。</p></blockquote>
+<hr/>
+<h2>0. 设计原则</h2>
+<ol><li><strong>隐私优先即产品原则</strong>：全链路 localhost，浏览器 Network 面板须呈现 0 外部请求。这既是技术约束，也是面向文保/规划用户的卖点。</li><li><strong>不为了 Agent / RAG 而堆技术</strong>：MVP 用「确定性工作流 + 关键步骤 LLM-in-the-loop」，RAG 检索增强留 P2。</li><li><strong>规模匹配</strong>：构件约 59 条，检索用 numpy 余弦即可，不引重型向量库（避免过度工程）。</li><li><strong>可演示、可复现</strong>：本地一键启动脚本（复用现有 <code>start_vlm_workbench.bat</code> 思路）。</li></ol>
+<hr/>
+<h2>1. 总体架构（一张图）</h2>
+<pre><code>┌──────────────────────── 隐私边界（全部 localhost，0 外部请求）────────────────────────┐
+│                                                                                      │
+│   浏览器前端（index.html 改造）                                                        │
+│   照片/标注 UI · 进度条 · 构件图谱参考面板                                            │
+│        │  HTTP /api/*  (CORS 消失)                                                    │
+│        ▼                                                                              │
+│   ┌──────────────────── 本地后端 FastAPI (localhost:8000) ────────────────────┐      │
+│   │  Agent 编排状态机 │ VLM 调用层 │ 知识约束层(59构件+5类) │                    │      │
+│   │  构件图谱/RAG(规划)│ 导出/数据集 │ 一致性·查重(P1)       │                    │      │
+│   └───────────────────────────────┬──────────────────────────────────────────┘      │
+│                                     │ OpenAI 兼容 /v1                              │
+│                                     ▼                                              │
+│                          Ollama · qwen3-vl:4b（本地 D 盘，CPU）                      │
+│                                                                                      │
+│   会话态：浏览器 localStorage（不传云）· 标注产物：本地 JSON/CSV 导出                  │
+└──────────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr/>
+<h2>2. 技术选型清单（含理由与约束适配）</h2>
+<div class="tablewrap"><table><thead><tr><th>层</th><th>选型</th><th>理由</th><th>状态</th><th>安装位置</th></tr></thead><tbody><tr><td>后端框架</td><td><strong>FastAPI + uvicorn</strong></td><td>async 支持流式 Agent 进度(SSE)、自带 OpenAPI 文档（作品集可截图）、生态成熟</td><td><code>[规划]</code></td><td>D 盘 venv（如 <code>D:\SRY-SkillS\qilou-agent\venv</code>）</td></tr><tr><td>VLM</td><td><strong>Ollama · qwen3-vl:4b</strong></td><td>已装 D 盘、OpenAI 兼容、可离线、隐私友好</td><td><code>[现状]</code></td><td><code>D:\Ollama\Models</code></td></tr><tr><td>前端</td><td>现有 index.html 改造，改调 localhost 后端</td><td>复用 90% 现有 UI，改动最小</td><td><code>[现状]</code>→<code>[规划]</code></td><td>项目目录</td></tr><tr><td>知识/图谱数据</td><td><strong>JSON 文件</strong>（59 构件词表、图谱条目）</td><td>小规模、零依赖、易版本化</td><td><code>[现状]</code>→<code>[规划]</code></td><td>项目目录</td></tr><tr><td>向量/检索</td><td>MVP：固定 few-shot 进 prompt；P2：<strong>nomic-embed-text</strong>（Ollama，CPU）+ numpy 余弦</td><td>59 条规模无需 Chroma/FAISS，numpy 即可；避免过度工程</td><td><code>[规划]</code></td><td>D 盘</td></tr><tr><td>图像处理</td><td><strong>Pillow</strong>（四点校正沿用现有算法）</td><td>纯 Python、CPU、零依赖</td><td><code>[现状]</code></td><td>D 盘 venv</td></tr><tr><td>部署</td><td>本地一键启动脚本（bat/py），bind 127.0.0.1</td><td>隐私 + 易演示</td><td><code>[规划]</code></td><td>项目目录</td></tr><tr><td>数据库服务</td><td><strong>无</strong></td><td>规模小、本地优先、减复杂度</td><td>—</td><td>—</td></tr><tr><td>云服务</td><td><strong>无</strong></td><td>不出本机</td><td>—</td><td>—</td></tr></tbody></table></div>
+<hr/>
+<h2>3. 各层设计</h2>
+<h3>3.1 前端改调（根治 CORS）</h3>
+<ul><li><strong>现状</strong>：<code>file://</code> 直连 Ollama，靠「父窗口直连」绕过 <code>Origin:null</code> 的 403。</li><li><strong>新方案</strong>：前端只调 <code>http://localhost:8000/api/*</code>；后端服务端调 Ollama。<strong>CORS 彻底消失</strong>，前端不再关心模型细节。</li><li><strong>建议</strong>：后端同时以静态路由托管 <code>index.html</code>，用户直接开 <code>http://localhost:8000</code>——既解决 file:// 怪异行为，又统一入口。</li></ul>
+<h3>3.2 后端框架（FastAPI）</h3>
+<ul><li>为什么 FastAPI：① 原生 async，适合「Agent 分步跑 + SSE 推进度条」；② 自动生成 <code>/docs</code> OpenAPI，作品集可截图证明你懂接口契约；③ 与 Ollama 的 OpenAI 兼容 client 无缝对接。</li><li>关键端点（草案）：</li><li><code>POST /api/upload</code> 批量导入 + EXIF 转正</li><li><code>POST /api/rectify</code> 四点透视校正（自动/手动）</li><li><code>POST /api/prelabel</code> 调 VLM 出构件草稿框</li><li><code>POST /api/review</code> 人工复核结果回写</li><li><code>POST /api/infer</code> 知识约束层打分 → 候选风格 + 证据链</li><li><code>GET  /api/atlas</code> 构件图谱参考面板数据</li><li><code>POST /api/export</code> 导出 CSV/JSON（0/1 矩阵 + 谱系）</li><li><code>GET  /api/agent/run</code> SSE 流式：编排整条流水线并推每步状态</li></ul>
+<h3>3.3 VLM 调用层（本地 Ollama）</h3>
+<ul><li>模型：<code>qwen3-vl:4b</code>（已装 D 盘），经 OpenAI 兼容端点 <code>http://localhost:11434/v1</code> 调用。</li><li><strong>复用已踩坑经验</strong>（这是你真实亮点，写进作品集）：</li><li>thinking 死循环 → 关闭 think 或设超时熔断（单张超时则标「草稿失败，请人工」）；</li><li>坐标不可靠 → 仅作橙色虚线草稿，不自动落库，强制人工确认；</li><li>四层容错解析（沿用 <code>vlm_prelabel.py</code>）——把非结构化输出稳稳转成构件列表。</li><li><strong>性能预期（需实测）</strong>：CPU 上单张推理可能 10–60s；MVP 串行处理 + 进度条，演示用 5–10 张即可。</li></ul>
+<h3>3.4 知识约束层（符号/规则层，非训练模型）<code>[现状]</code></h3>
+<ul><li>数据：59 构件词表 + 5 类加权 <code>infer()</code> 逻辑（工作台已有），迁为后端 <code>knowledge.py</code> 模块。</li><li>角色：VLM 草稿 → 约束层校验/打分 → 候选风格 + <strong>证据链</strong>（每条构件列出加多少分）。这是「把领域知识作为 AI 的约束层」的产品化落地。</li><li>与 RAG 关系：约束层是<strong>确定性规则</strong>；RAG 是<strong>检索增强</strong>（P2）。两者可并存——规则保证下限，检索提升上限。</li></ul>
+<h3>3.5 构件图谱数据层 + RAG（P1 参考面板 / P2 检索增强）</h3>
+<ul><li>数据结构：<code>atlas = [{id, name, images[], features, discriminative_notes, label}]</code></li><li><strong>P1（MVP 先做）</strong>：后端 serve <code>atlas.json</code> + 图片，前端做「参考面板」——点构件看示例图 + 判别特征 + 易混点。<strong>独立就有用户价值，无需检索。</strong></li><li><strong>P2（RAG）</strong>：用 <code>nomic-embed-text</code>（Ollama，CPU）对 <code>features</code> 文本向量化；标注时对当前区域描述做检索，把最相关参考注入 VLM prompt → 降幻觉。</li><li><strong>诚实提醒</strong>：59 条规模做「向量库」是杀鸡用牛刀，<strong>numpy 余弦相似度即可</strong>；若图谱扩张到上千条再上 Chroma/FAISS。这体现 PM 的克制。</li></ul>
+<h3>3.6 Agent 编排层（诚实定义「Agent」）</h3>
+<ul><li><strong>关键澄清</strong>：这里的 Agent = <strong>确定性工作流编排 + 关键步骤 LLM-in-the-loop</strong>，不是完全自主的 tool-use ReAct。原因：本地无 GPU、需可演示可复现、避免不可控。</li><li>实现：后端用异步状态机串起 <code>导入→校正→预标注→复核→推理→导出</code>；每步产出状态事件，SSE 推前端进度条（对应 P1「Agent 进度可视化」）。</li><li>P2 可选增强：用 VLM 二次确认「争议/混合类型」，做语义仲裁。</li></ul>
+<h3>3.7 隐私部署</h3>
+<ul><li>后端 bind <code>127.0.0.1</code>；Ollama 本机；<strong>0 外部网络调用</strong>。</li><li>验证：浏览器 Network 面板 0 外部请求（作品集可演示证明）。</li><li>持久化：localStorage（会话态）+ 本地 JSON/CSV 导出（不传云）。</li></ul>
+<hr/>
+<h2>4. MVP 最小技术栈（落地清单）</h2>
+<ul><li><strong>后端</strong>：Python venv（D 盘）+ FastAPI + uvicorn + openai（指向本地）+ Pillow</li><li><strong>VLM</strong>：Ollama qwen3-vl:4b</li><li><strong>知识/图谱</strong>：JSON 文件</li><li><strong>前端</strong>：现有 index.html 改造，改调 localhost 后端</li><li><strong>检索</strong>：MVP 固定 few-shot；P2 再上 embedding</li><li><strong>不引入</strong>：数据库服务、GPU、任何云服务</li></ul>
+<blockquote><p>一键启动：提供 <code>start_agent.bat</code>（激活 D 盘 venv → 启 Ollama → 启 FastAPI → 打开 localhost），复用现有 <code>start_vlm_workbench.bat</code> 思路。</p></blockquote>
+<hr/>
+<h2>5. 演进路线（技术侧 v0.6 → v0.8）</h2>
+<div class="tablewrap"><table><thead><tr><th>版本</th><th>技术内容</th><th>对应能力证明</th></tr></thead><tbody><tr><td><strong>v0.6 (MVP)</strong></td><td>前端改调 + 后端编排 + VLM + 知识约束层 + 导出</td><td>MVP 落地、Agent 编排、VLM/Prompt 优化</td></tr><tr><td><strong>v0.7 (P1)</strong></td><td>构件图谱参考面板 + 一致性提示 + 查重</td><td>用户研究落地、协作产品化</td></tr><tr><td><strong>v0.8 (P2)</strong></td><td>RAG 检索增强 + 训练数据沉淀 + (可选)训专用检测器</td><td>RAG 理解、数据飞轮闭环</td></tr></tbody></table></div>
+<hr/>
+<h2>6. 风险与缓解</h2>
+<div class="tablewrap"><table><thead><tr><th>风险</th><th>缓解</th></tr></thead><tbody><tr><td>CPU 推理慢</td><td>进度条 + 断点续跑；演示少量图</td></tr><tr><td>VLM 不稳定</td><td>超时熔断 + 人工兜底</td></tr><tr><td>本地后端部署复杂</td><td>一键启动脚本；环境全置 D 盘</td></tr><tr><td>用户非科班</td><td>AI 辅助编程(TRAE/Codex)生成脚手架，但 PRD/架构/选型由本人定（作品集强调「我定义，AI 实现」）</td></tr></tbody></table></div>
+<hr/>
+<h2>7. 与 AI PM 能力对应</h2>
+<ul><li><strong>Agent 工作流设计</strong> → §3.6 编排层</li><li><strong>VLM / Prompt 优化</strong> → §3.3 调用层（含容错经验）</li><li><strong>RAG 理解（含边界）</strong> → §3.5（知道何时不该用向量库）</li><li><strong>隐私 / 合规产品决策</strong> → §3.7（不出本机即卖点）</li><li><strong>MVP 技术选型</strong> → §2 / §4（约束驱动选型）</li><li><strong>前端/后端/ML 服务边界理解</strong> → §1 总体架构（能讲清三者分工）</li></ul></div>
+<div class="footer">HeritageLens · 骑楼立面风格智能识别 ｜ 作品集演示材料 ｜ 照片与数据不出本机</div>
+</div></body></html>
