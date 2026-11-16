@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>项目总结（STAR） · HeritageLens 作品集</title><style>
+:root{--teal:#0c4a52;--teal2:#147079;--accent:#1fa88f;--ink:#1a2b2e;--mut:#5b6f72;--line:#dce6e6;--bg:#f4f8f8;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
+.site-nav{background:linear-gradient(135deg,#0c4a52,#147079);color:#fff;position:sticky;top:0;z-index:999;box-shadow:0 2px 14px rgba(12,74,82,.25)}
+.sn-in{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;gap:26px;min-height:56px;flex-wrap:wrap}
+.sn-brand{font-weight:800;letter-spacing:.3px;font-size:16px;color:#fff;text-decoration:none;white-space:nowrap}
+.sn-brand span{color:#4fd1b5}
+.sn-links{display:flex;gap:4px;flex-wrap:wrap;overflow-x:auto}
+.sn-links a{color:#cfe6e4;text-decoration:none;font-size:13px;padding:6px 11px;border-radius:7px;white-space:nowrap;transition:.18s}
+.sn-links a:hover{background:rgba(255,255,255,.12);color:#fff}
+.sn-links a.on{background:rgba(255,255,255,.2);color:#fff;font-weight:700}
+.wrap{max-width:920px;margin:0 auto;padding:38px 24px 80px}
+.doc-hd{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:30px}
+.doc-hd .kicker{color:var(--accent);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+.doc-hd h1{font-size:27px;margin:8px 0 6px;color:var(--teal)}
+.doc-hd .meta{color:var(--mut);font-size:13px}
+.doc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:34px 40px;box-shadow:0 4px 24px rgba(12,74,82,.05)}
+.doc h1{font-size:24px;color:var(--teal);border-bottom:2px solid var(--line);padding-bottom:12px;margin-top:8px}
+.doc h2{font-size:20px;color:var(--teal2);margin-top:34px;border-left:4px solid var(--accent);padding-left:12px}
+.doc h3{font-size:17px;color:var(--teal);margin-top:26px}
+.doc h4{font-size:15px;color:var(--teal2)}
+.doc p,.doc li{font-size:14.5px;color:#2a3b3e}
+.doc li{margin:5px 0}
+.doc blockquote{background:#eef7f5;border-left:4px solid var(--accent);margin:16px 0;padding:12px 18px;border-radius:0 8px 8px 0;color:#35565a;font-size:14px}
+.doc blockquote p{margin:4px 0;color:#35565a}
+.doc code{background:#eef2f2;color:#b0392e;padding:1px 6px;border-radius:4px;font-size:12.5px;font-family:ui-monospace,Consolas,monospace}
+.doc pre{background:#12262a;color:#d6e8e6;padding:18px 20px;border-radius:10px;overflow-x:auto;font-size:12.5px;line-height:1.6}
+.doc pre code{background:none;color:inherit;padding:0}
+hr{border:0;border-top:1px dashed var(--line);margin:26px 0}
+.tablewrap{overflow-x:auto;margin:16px 0}
+.doc table{border-collapse:collapse;width:100%;font-size:13px;min-width:520px}
+.doc th{background:var(--teal);color:#fff;padding:9px 12px;text-align:left;white-space:nowrap}
+.doc td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
+.doc tr:nth-child(even) td{background:#f7fafa}
+.doc a{color:var(--teal2)}
+.footer{text-align:center;color:var(--mut);font-size:12px;padding:30px 20px 50px;border-top:1px solid var(--line);margin-top:40px}
+.warn{background:#fff8e8;border:1px solid #f0d999;border-radius:10px;padding:14px 18px;font-size:13px;color:#7a5b12;margin-bottom:22px}
+</style></head><body>
+<nav class="site-nav"><div class="sn-in">
+<a class="sn-brand" href="index.html">HL<span>·</span>作品集</a>
+<div class="sn-links"><a href="index.html">项目主页</a><a href="demo.html">交互演示</a><a href="workbench.html">前端工作台</a><a href="backend.html">后端源码</a><a href="prd.html">产品 PRD</a><a href="architecture.html">技术方案</a><a href="testing.html">测试验证</a><a href="star.html">项目总结</a></div>
+</div></nav>
+<div class="wrap">
+<div class="doc-hd"><div class="kicker">SUMMARY · STAR</div><h1>项目总结（STAR）</h1><div class="meta">情境 / 任务 / 行动 / 结果 ｜ 一页读懂项目</div></div>
+<div class="warn">📌 本文档为课程项目作品集材料，含<span style="font-weight:700">规划/草案</span>与<span style="font-weight:700">现状</span>两类内容，凡标注「目标值 / 待实测 / 规划」的数字均非已达成成果。演示页数据为预置模拟。</div>
+<div class="doc"><h1>方向 A · STAR 简历成品（v0.2 · 可直接复制使用）</h1>
+<blockquote><p><strong>v0.2 更新（2026-11-12）</strong>：应用户「后续将尝试几种大模型、当前模型对构件识别不到位」的想法，新增 <strong>§7 模型评测与选型专题</strong>，并把成品 A 的「效果优化」升级为「模型评测与选型」——补上了原简历最弱的一环（模型层面的评测与选型能力）。 <strong>交付说明</strong>：本文给出<strong>现在就能投的完整简历段落</strong>（成品 A，无占位符）、<strong>完成 v0.6 + 测试后的升级版</strong>（成品 B，【预期】）、<strong>完成多模型横向评测后的升级版</strong>（成品 C，【预期】）、STAR 拆解与面试追问防御。 <strong>美化边界（重要但只说一次）</strong>：美化 = 表达、结构、视角、动词升级、把技术事实翻译成产品决策；<strong>不美化 = 事实、数字、完成状态</strong>。原因不是保守，而是 AI PM 面试对数字追问极凶，一个编造的「访谈 8 人」会在 30 秒内被问穿；而你手上的真实数据（100% 失败 → 稳定出框、5 组对照实验、141 框全导入、20/20 自检）本来就比编的更硬。 数据来源：<code>HANDOFF.md</code> v0.5 实测记录（2026-11-09 21:15 基线）、<code>02-汇报ppt/11.9/标注数据/</code> 8 份 labelme JSON。</p></blockquote>
+<hr/>
+<h2>0. 四个必须先想清楚的判断</h2>
+<ol><li><strong>「结果」不等于「效率提升 X%」</strong>。工程可用性结果（自检通过率、导入成功率、模型可用率）、数据处理规模（980→618→50）、AI 效果从 0 到可用，全部是合格且可验证的 R。你已经有 R 了，不需要等 v0.6。</li><li><strong>你最值钱的不是「做了个工作台」，是三次产品判断</strong>：① 把风格判定权留在人手里（模型只认构件）；② 发现 VLM 不可复现后，不硬吹模型、改设计 human-in-the-loop 草稿隔离；③ 发现 618 张「可用」判宽了，把 50 张自动矫正全部标「待定」。这是成熟 PM 才会做的取舍，比任何功能列表都亮。</li><li><strong>项目名与角色</strong>：沿用已确认的「骑楼志 · AI 遗产调研助手（HeritageLens）」。角色写「项目负责人 / 产品设计与 AI 方案」最稳；若目标岗明确写 AI 产品经理，可写「AI 产品经理（课程项目）」——两者都不虚，因为需求定义、方案选型、验收标准确实由你定。</li><li><strong>【v0.2 新增】「模型识别不到位」不是减分项，是加分项</strong>。面试官不担心你选错过模型，只担心你<strong>不知道为什么错、也不知道下一步怎么判断</strong>。而且这个发现恰好<strong>强化</strong>了原来的产品判断：正因为通用小模型啃不动 59 个细粒度构件语义，才需要「领域知识约束 + 人工兜底 + 数据飞轮」。所以换模型不是推翻原方案，而是<strong>给原判断补一组对照证据</strong>。详见 §7。</li></ol>
+<hr/>
+<h2>1. STAR 拆解（用于面试口述，不是简历原文）</h2>
+<h3>S · Situation（情境）</h3>
+<p>建筑学课题组承担台山华侨圩镇骑楼立面要素识别与类型谱系研究，方法对标 Xue et al. (2026) <em>Nature Communications</em>。田野调研积累约 1500 张照片，但有效样本需先清洗；构件标注与风格判断高度依赖资深研究者，学生难以上手；通用 AI（GPT/豆包类）不懂建筑构件语义、答案常幻觉且照片需上传云端，与文保/规划场景的数据合规冲突。运行环境还有硬约束：无 GPU、C 盘紧张、导师需双击即用。</p>
+<h3>T · Task（任务）</h3>
+<p>把一条断裂的研究链路（清洗 → 校正 → 标注 → 推理 → 谱系导出）重构成<strong>一个可被非专家使用、AI 输出可信任、数据不出本机的端到端产品</strong>，并在课程周期内完成可演示交付。个人承担：需求定义、用户场景拆解、竞品对比、PRD 与 P0/P1/P2 规划、AI 技术选型、验收标准制定、效果测试设计；代码实现借助 AI 辅助编程工具完成。</p>
+<h3>A · Action（动作，五条主线）</h3>
+<div class="tablewrap"><table><thead><tr><th>主线</th><th>做了什么</th><th>体现的 PM 能力</th></tr></thead><tbody><tr><td><strong>A1 需求与方案定义</strong></td><td>拆解三类用户（研究者/志愿者/规划调研员）与 5 大痛点；明确垂直领域差异化；定义「清洗→校正→VLM 预标注→人工复核→可解释推理→导出」单入口工作流；产出 PRD、用户故事、MVP 边界（P0 全链路 + 1 个 P1），主动把 RAG、模型训练、移动端延后</td><td>用户洞察 / 需求优先级 / MVP 克制</td></tr><tr><td><strong>A2 领域知识产品化</strong></td><td>构建 59 项构件词表 + 5 类加权证据推理作为 AI 的<strong>约束层</strong>，每条候选风格可追溯到具体构件及其得分；设定「模型只识别构件、风格由研究者解释性归并」的能力边界；4 类争议风格「仅展示不打分」；12 项用户扩充词标「未标定·需专家复核」，禁止直接进论文</td><td>可解释 AI / 模型能力边界 / 专业场景敬畏</td></tr><tr><td><strong>A3 模型效果评测与优化（核心亮点）</strong></td><td>接入本机 Ollama <code>qwen3-vl:4b</code> 做构件草稿预标注；针对「100% 输出 0 框」设计 <strong>A/B/C/I/K 五组对照实验</strong>（原配置 44.6s / 扩 <code>num_ctx</code> 275.6s / <code>format:json</code> 69.1s / 仅 id 词表 41.5s / <code>think:false</code> 50.6s，均为 0 框），逐项排除参数与格式假设，定位根因为「47 行长词表触发 thinking 死循环 + 解析器只认 JSON」；重构 986 字符紧凑词表 + 四层容错解析 + 超时熔断，实测 13–30 秒稳定出 3–5 个合法框；基于同图波动（3/4/4 框）、bbox 为模型假设坐标、conf 恒 0.8 等证据，<strong>判定该模型能力边界为「草稿生成器」而非判定者</strong>，并据此规划多模型横向评测</td><td>模型评测 / 根因归因 / Prompt 与上下文工程 / 技术选型判断</td></tr><tr><td><strong>A4 可靠性与数据闭环</strong></td><td>发现同图三次结果波动（3/4/4 框）、坐标不可靠 → 设计 <strong>human-in-the-loop 草稿隔离</strong>：橙色虚线草稿，未复核不进 <code>infer()</code> 证据分、不进 YOLO/CSV 正式导出；打通 labelme 双向 JSON 互通并携带 draft/reviewed 状态，修掉 <code>flags</code> 必须为 <code>dict[str,bool]</code> 的兼容坑；8 份试点 141 框 / 23 种非标标签 100% 归一化导入并逐条给出映射报告；设计「人工复核→沉淀标注→构件图谱→训练自动识别」数据飞轮</td><td>human-in-the-loop / 数据闭环 / 质量门禁</td></tr><tr><td><strong>A5 工程与合规</strong></td><td>针对 <code>Origin:null</code> 被 Ollama 403，设计 4 端点候选 + 逐端点失败诊断 + 父窗口来源直连，实现零安装、零常驻服务；全链路 localhost、照片不出本机；建立 <code>node --check</code> + headless 8 视图 0 报错 + 内置自检的回归基线；<strong>系统预留 <code>MODEL_ADAPTER</code> 适配层（<code>impl(imgEl,opts)</code> 契约），约定换模型只改一处、界面不用动</strong>，为后续多模型评测留出替换点</td><td>隐私合规 / 可扩展架构 / 交付质量</td></tr></tbody></table></div>
+<h3>R · Result（结果，全部为已实测事实）</h3>
+<div class="tablewrap"><table><thead><tr><th>类别</th><th>实测结果</th></tr></thead><tbody><tr><td><strong>AI 效果</strong></td><td>VLM 预标注从「100% 出 0 框、44.6s 空转」恢复为<strong>稳定 13–30s 输出 3–5 个合法候选框</strong>；6 张样本 4–6 张成功，平均 27.7s；离线脚本端到端 33.8s 出 4 框</td></tr><tr><td><strong>模型评测</strong></td><td><strong>5 组对照实验</strong>完成根因排除，形成「参数/格式调整无法弥补领域语义与上下文设计缺陷」的结论；明确 4B 本地模型在细粒度构件上的能力边界，为后续多模型选型提供评测基线</td></tr><tr><td><strong>数据规模</strong></td><td>从 1545 个文件中剔除 570 个 AppleDouble 元数据，清洗出 <strong>980 张有效照片</strong>、生成 49 张编号拼图；人工筛出 <strong>618 张可用</strong>；完成 <strong>50 张自动透视校正</strong>（16 四角 / 11 消失点 / 23 仅转正，全部标待定）</td></tr><tr><td><strong>标注闭环</strong></td><td>8 份 labelme 试点 <strong>141 个框（含 circle）100% 导入</strong>、<strong>23 种非标准标签全归一化</strong>、8 份独立样本各自可推理、映射报告 23 行</td></tr><tr><td><strong>知识与工程</strong></td><td>59 项构件词表 / 52 条别名 / 17 条来源 24 链接 / 9 风格卡 / 180 条三色证据句；8 视图单文件工作台（2.47MB）；<code>node --check</code> 通过、headless 8 视图 0 报错、<strong>内置自检 20/20</strong></td></tr><tr><td><strong>合规</strong></td><td>全链路 localhost、零云端 API、照片不出本机，满足文保/规划数据合规</td></tr><tr><td><strong>诚实边界</strong></td><td>风格推理仍为专家规则（非训练模型）；VLM/SAM 仅作预标注草稿；0–3 权重未标定，不进论文结论；<strong>多模型横向评测尚未开展</strong></td></tr></tbody></table></div>
+<blockquote><p><strong>面试里 R 要这样收尾</strong>：「最重要的结果不是跑通了功能，而是我验证了『在专业领域，4B 本地模型不能当判定者，只能当草稿生成器』——并据此把人工复核设计成产品机制而非无奈补丁，同时让复核产出变成未来的训练数据。后续换模型的评测，也是为了验证这个判断是否对不同规模的模型都成立。」</p></blockquote>
+<hr/>
+<h2>2. 【成品 A · v0.2】现在就能投递的简历段落（直接复制，无占位符）</h2>
+<blockquote><p>项目名称、角色、时间按需微调；正文可原样使用。v0.2 相对上一版：第 2 条补「可插拔模型适配层」，第 3 条由「效果优化」升级为「模型评测与选型」，其余不变。</p></blockquote>
+<pre><code>骑楼志 · AI 遗产调研助手（HeritageLens）  |  项目负责人 · 产品设计与 AI 方案  |  2026.09 – 2026.11
+建筑遗产田野调研 AI 工具化项目；对标 Nature Communications 2026 视觉谱系方法；本地离线、数据不出本机
+
+· 需求定义：针对「近千张田野照片筛选慢、构件标注依赖资深研究者、通用 AI 不懂专业语义且数据需出域」痛点，
+  将研究流程重构为「清洗→透视校正→VLM 预标注→人工复核→可解释推理→数据导出」端到端 AI 工作流；
+  独立完成三类用户画像、竞品对比、PRD 与 P0/P1/P2 规划，主动将 RAG 与模型训练延后以保证 MVP 可交付。
+· AI 方案：构建 59 项构件词表 + 5 类加权证据推理作为模型约束层，使每条候选风格可追溯至具体构件及得分；
+  明确「模型只识别构件、风格由研究者裁定」的能力边界，4 类争议风格仅展示不打分；
+  设计可插拔模型适配层（统一推理契约），使后续模型替换不改动界面与业务逻辑。
+· 模型评测与选型：针对本地 4B 多模态模型构件识别不足，设计 5 组对照实验逐项排除参数与输出格式假设，
+  定位「长词表触发 thinking 死循环 + 解析器只认 JSON」根因，重构紧凑词表、四层容错解析与超时熔断，
+  实测从 100% 空输出恢复为 13–30 秒稳定输出 3–5 个候选框；基于同图结果波动与坐标不可靠，
+  判定其能力边界为「草稿生成器」而非判定者，并建立评测基线以支撑后续多模型横向选型。
+· 可靠性设计：针对模型输出不稳定性，设计 human-in-the-loop 草稿隔离机制——未经人工复核不进入证据分与正式导出；
+  打通 labelme 双向 JSON 互通并携带复核状态，8 份试点标注 141 个框、23 种非标标签 100% 归一化导入，
+  形成「人工复核→沉淀标注→反哺模型」数据闭环。
+· 工程与合规：设计多端点连接诊断与父窗口直连方案绕开浏览器跨域限制，实现零安装、零常驻服务；
+  全链路本地运行、照片不出本机，满足文保/规划场景数据合规要求。
+· 交付结果：产出 8 视图纯前端工作台，覆盖 980 张照片清洗、618 张人工筛选、50 张自动透视校正与 17 条文献溯源；
+  通过 node --check、headless 8 视图 0 报错、内置自检 20/20 的回归基线。</code></pre>
+<blockquote><p>⚠️ <strong>一处必须说准的细节</strong>：<code>MODEL_ADAPTER</code> 目前是<strong>风格推理层</strong>的适配器（<code>{mode:'rule', impl:null}</code>，接口契约为 <code>impl(imgEl,opts)</code>），不是 VLM 调用层的 Provider 抽象。所以上面写的是「设计可插拔模型适配层（统一推理契约），使后续模型替换不改动界面与业务逻辑」——这是真的；<strong>不要写成「已实现 VLM Provider 热切换 / 多模型一键切换」</strong>，面试官一问代码就穿。若你后续真在 VLM 调用层做了统一封装，再把这句升级为「实现多模型 Provider 抽象」。</p></blockquote>
+<h3>精简版（简历空间紧张时用 3 条）</h3>
+<pre><code>骑楼志 · AI 遗产调研助手（HeritageLens） | 项目负责人 · 产品设计与 AI 方案 | 2026.09 – 2026.11
+· 定义面向建筑遗产调研者的本地多模态工作流，独立完成用户场景、竞品对比、PRD 与 MVP 边界规划；
+  以 59 项构件词表 + 可解释加权推理构建模型约束层，明确「模型只识别构件、风格由人裁定」的能力边界。
+· 主导模型评测与选型：以 5 组对照实验定位 4B 本地模型 100% 空输出根因，重构紧凑词表 + 四层容错解析
+  + 超时熔断，恢复为 13–30 秒稳定出 3–5 个候选框；据结果波动判定其「仅可作草稿生成器」，
+  设计 human-in-the-loop 复核门禁与可插拔模型适配层，为多模型横向评测建立基线。
+· 打通 labelme 双向互通与数据闭环，8 份试点 141 框 / 23 种非标标签 100% 归一化导入；
+  交付覆盖 980 张照片清洗、618 张筛选、50 张校正的 8 视图工作台，自检 20/20，全链路数据不出本机。</code></pre>
+<h3>一句话版（项目列表 / 自我介绍）</h3>
+<blockquote><p>主导设计「骑楼志」AI 遗产调研助手：以领域知识约束本地多模态模型、用对照实验完成模型能力评测与选型、以 human-in-the-loop 守住专业准确率，把近千张田野照片转化为可分析、可追溯、数据不出本机的构件与谱系数据。</p></blockquote>
+<hr/>
+<h2>3. 【成品 B】目标态升级版（完成 v0.6 + 测试后）</h2>
+<blockquote><p>⚠️ <strong>本节全部为【预期】，不是已完成成果，现在请勿写入简历。</strong> 它的作用是让你看见「做完能升级成什么样」，以及明确哪些数字必须靠第七阶段实测拿到。带 <code>〔目标〕</code> 的是设计预期，实测后替换；实测不达标就如实改写或删掉这条。</p></blockquote>
+<pre><code>骑楼志 · AI 遗产调研助手（HeritageLens） | AI 产品经理（课程项目） | 2026.09 – 2026.xx
+· 用户研究：访谈〔目标 5–8 人〕（研究者/志愿者/规划调研员），从真实田野流程中提炼 5 大痛点与 6 条可验证假设，
+  输出用户调研报告与竞品分析，据此收敛 MVP 范围。
+· 产品定义：撰写完整 PRD（用户故事 / 业务流程 / 交互逻辑 / 异常处理 / 量化验收标准），
+  定义 P0/P1/P2 与版本路线，主导「RAG 与模型训练延后」的取舍决策。
+· AI 架构：设计轻量本地后端（FastAPI + Agent 状态编排 + 服务端调用 Ollama）+ 知识约束层 + 构件图谱数据层，
+  以 SSE 实现工作流进度可视化；明确 Agent 为「确定性编排 + 关键步骤 LLM-in-the-loop」而非自主 ReAct。
+· 数据飞轮：以构件图谱为枢纽，串起「人工复核→沉淀标注→RAG 辅助标注 / 训练自动识别」闭环。
+· 模型选型：横向评测〔N 个〕VLM，建立统一评测集与指标，输出选型决策矩阵 〔结论：__〕。
+· 验证结果：经 before/after 对比测试，预处理耗时下降 〔目标 ≥50%，实测 __%〕、
+  VLM 草稿+人审较纯人工提速 〔实测 __%〕 且标注一致性 κ 不降 〔实测 __〕、
+  无经验用户任务成功率 〔目标 ≥80%，实测 __%〕、浏览器 Network 面板 0 外部请求。</code></pre>
+<p><strong>把「预期」变成「可写」的最短路径</strong>（对应 <code>方向A_测试与量化验证.md</code> §3，现在就能做、零开发成本）：</p>
+<ol><li>F12 Network 面板截图 → 立刻坐实「0 外部请求」；</li><li>20 张图人工预处理 vs 脚本计时 → 拿到第一个真实降幅%；</li><li>8 份 labelme 往返核对 → 拿到导出一致性；</li><li>复跑 <code>node --check</code> + 8 视图 + 自检 → 拿到工程基线截图。</li></ol>
+<blockquote><p>这四项做完，成品 B 里就有 <strong>4 个真实数字</strong> 可以落笔，简历说服力会再上一个台阶。模型选型的落地方案见 §7。</p></blockquote>
+<hr/>
+<h2>4. 美化手法对照表（学会之后自己也能改）</h2>
+<div class="tablewrap"><table><thead><tr><th>原始事实（技术日志口吻）</th><th>简历表达（产品口吻）</th><th>美化在哪</th></tr></thead><tbody><tr><td>修复 qwen3-vl 出 0 框的 bug</td><td>完成模型效果评测与优化，从不可用恢复为稳定输出 3–5 个候选框</td><td>视角：debug → AI 效果优化；保留真实数字</td></tr><tr><td>试了 A/B/C/I/K 五组配置都不行</td><td>设计 5 组对照实验逐项排除参数与输出格式假设，定位根因</td><td>「试配置」→「<strong>实验设计与根因归因</strong>」，AI PM 核心能力</td></tr><tr><td>这个模型构件识别得不准</td><td>判定模型在细粒度构件语义上的能力边界为「草稿生成器」而非判定者</td><td>把「不行」变成<strong>有结论的能力边界判断</strong></td></tr><tr><td>以后可能换几个模型试试</td><td>建立评测基线，设计可插拔模型适配层以支撑多模型横向选型</td><td>「可能会试」→「<strong>有方法、有架构承接的选型机制</strong>」</td></tr><tr><td>加 <code>if(a.draft) return</code></td><td>设计 human-in-the-loop 草稿隔离与质量门禁，守住专业场景准确率</td><td>把代码动作升维成<strong>产品机制与决策</strong></td></tr><tr><td>8 个 JSON 导入成功了</td><td>141 个框 / 23 种非标标签 100% 归一化导入，形成数据闭环</td><td>用规模与成功率量化；点出闭环价值</td></tr><tr><td>工作台是纯前端 file://</td><td>零安装、零常驻服务、全链路本地，满足文保数据合规</td><td>技术约束翻译成<strong>用户价值与合规卖点</strong></td></tr><tr><td>47 项权重没标定</td><td>明确模型能力边界，禁止未标定权重进入结论</td><td>「没做完」如实说，反而体现专业敬畏</td></tr><tr><td>用 TRAE/Codex 生成代码</td><td>独立完成需求定义/方案/验收，AI 辅助实现</td><td>区分「我定义」与「AI 实现」，坐实 PM 角色</td></tr></tbody></table></div>
+<p><strong>规律</strong>：美化几乎全是「把 what 换成 why + so what」，数字一个没动。</p>
+<hr/>
+<h2>5. 不能碰的线 + 追问防御</h2>
+<p><strong>不能碰</strong>：</p>
+<ol><li>不写「已训练模型 / 模型自动识别 9 种风格」——实际是专家规则推理，VLM 只出草稿。</li><li>不写「访谈 N 人 / 上线后用户量 / 满意度提升 X%」——尚未发生。</li><li>不写「FastAPI 后端已交付 / RAG 已上线」——<code>[规划]</code>，v0.6 之后才是事实。</li><li><strong>【v0.2 新增】不写「已横向评测 N 个模型 / 已选定最优模型 / 换模型后准确率提升 X%」</strong>——评测尚未开展。也不写「VLM Provider 热切换已实现」，适配层目前只在风格推理层。</li></ol>
+<p><strong>面试官最可能追问的数字与判断，你的真实底牌</strong>：</p>
+<div class="tablewrap"><table><thead><tr><th>追问</th><th>怎么答（都有实测记录支撑）</th></tr></thead><tbody><tr><td>「13–30 秒 / 3–5 个框」怎么测的？</td><td>改配置后重复 3 次得 3/4/4 框；另测 6 张不同照片，4–6 张成功、平均 27.7s；离线脚本端到端 33.8s 出 4 框。同图结果会变，所以我才把它定位成草稿。</td></tr><tr><td>「100% 出 0 框」根因是什么？</td><td>47 行词表（2151 token）让 thinking 模型逐项自我怀疑，生成预算耗在 thinking、<code>done=length</code>、<code>content</code> 恒空；叠加解析器只认 JSON。做了 A/B/C/I/K 五组对照实验排除 <code>num_ctx</code>、<code>format:json</code>、仅 id 词表、<code>think:false</code> 单用等假设。</td></tr><tr><td>「59 项构件」是文献给的吗？</td><td>不是。原 47 项是综合构造的工作词汇表，v0.5 依据 8 份真实标注里的 12 类缺项扩充到 59 项；扩充项权重为语义推拟、标注「未标定·需专家复核」，不能进论文结论。</td></tr><tr><td>「980 / 618 / 50」什么关系？</td><td>1545 个文件里 570 个是 macOS <code>._*</code> 元数据，真实照片 980 张 → 人工判定 618 张可用 → 前 50 张做自动透视校正（16 四角 / 11 消失点 / 23 仅转正）。看拼图时发现 618 判得偏宽、混入街景与特写，11 张白边 &gt;20%，所以 50 张全部标「待定·需人工复核」——<strong>这个发现本身就是我做质量门禁的依据</strong>。</td></tr><tr><td><strong>【新】「为什么想换模型？换更大的就一定更好吗？」</strong></td><td>不一定，所以我先做错误归因。当前识别不到位至少有四类可能：① 模型参数量小；② 59 个细粒度构件（如 <code>broken_pediment</code>、<code>pintu_pagar</code>）超出通用 VLM 的语义覆盖；③ prompt 词表/上下文设计（已实测长词表会触发死循环，换模型后仍需重调）；④ 缺乏 few-shot 示例与领域参考。已有实测与文献都指出零样本方法在专业建筑类别上假阳性高、不可复现，所以「换模型」只是候选解之一，知识增强（构件图谱 / RAG）与数据飞轮可能才是根本解。</td></tr><tr><td><strong>【新】「你怎么判断哪个模型更好？」</strong></td><td>不靠主观感觉，用统一评测集 + 四维指标：构件召回/误报（对照人工金标准）、坐标稳定性（同图重跑一致性）、单张延迟、以及是否支持本地部署（合规硬约束）。每个模型跑同一批图、同一套 prompt 模板，输出决策矩阵再选型。详见 §7。</td></tr><tr><td><strong>【新】「如果换了模型还是不行呢？」</strong></td><td>那反而是最有价值的结论：说明瓶颈是<strong>领域语义鸿沟</strong>而非算力，产品方向应从「换模型」转向「给模型补知识」——构件图谱 few-shot → RAG 检索增强 → 用人工复核沉淀的数据训专用检测器，也就是我设计的数据飞轮。这条推理链本身就是我做技术选型的依据。</td></tr></tbody></table></div>
+<hr/>
+<h2>6. 结论与投递节奏</h2>
+<ul><li><strong>现在就能投</strong>，不必等 v0.6，也不必等换模型。成品 A v0.2 已是一份有产品定位、模型评测能力、技术深度、可验证结果的完整经历。</li><li>投递时配：作品集网页（见 <code>方向A_简历与作品集.md</code> §4 十页结构，建议把第 6 页扩成「模型评测与选型」）+ 2–3 分钟录屏（导入 → VLM 草稿 → 人工复核 → 导出）。</li><li>每做完一项第七阶段测试 / 一轮模型评测，就把成品 B、成品 C 里对应的 <code>〔实测 __〕</code> 换成真数字，简历逐版升级。</li><li>面试主叙事固定为：<strong>「我发现 4B 本地模型在专业领域不能当判定者，用对照实验验证了这一点，于是设计了一套让 AI 出草稿、人做终审、并把人的产出变成训练数据的机制；后续换模型是为了检验这套判断是否对不同规模的模型都成立」</strong>——这句话把评测能力、技术判断、产品机制、数据飞轮四件事一次讲完。</li></ul>
+<hr/>
+<h2>7. 【v0.2 新增】模型评测与选型专题：把「试几个模型」写成 PM 能力</h2>
+<h3>7.1 先纠正一个判断：换模型 ≠ 解决构件识别问题</h3>
+<p>你现在的观察是「这个模型明显对构件识别不到位」，这没错。但<strong>直接横向试几个模型，很容易做成一份没有结论的对比</strong>（面试官最怕听到「我试了几个，感觉 XX 比较好」）。正确的次序是：</p>
+<pre><code>① 错误归因（为什么识别不到位） → ② 建统一评测集与指标 → ③ 横向跑模型
+   → ④ 输出决策矩阵 → ⑤ 得出选型结论 → ⑥ 反哺产品架构</code></pre>
+<p>四类可能根因，<strong>只有第 ① 类能靠换模型解决</strong>：</p>
+<div class="tablewrap"><table><thead><tr><th>根因</th><th>换模型是否有效</th><th>更对症的解法</th></tr></thead><tbody><tr><td>① 模型参数量小 / 视觉能力弱</td><td>✅ 有效</td><td>换更大或更强的 VLM</td></tr><tr><td>② 细粒度构件语义缺失（通用 VLM 没见过专业类目）</td><td>⚠️ 有限</td><td><strong>构件图谱 few-shot / RAG 检索增强 / 领域微调</strong></td></tr><tr><td>③ Prompt 与上下文设计（已实测 47 行长词表触发死循环）</td><td>❌ 换模型反而要重调</td><td>紧凑词表、结构化输出、容错解析</td></tr><tr><td>④ 图像质量（斜拍、遮挡、白边）</td><td>❌ 无关</td><td>四点校正 + 质量门禁（你已有 50 张「待定」机制）</td></tr></tbody></table></div>
+<blockquote><p><strong>这正好和已确认的产品路线闭环</strong>：§1.7.1 里构件图谱的三种用法（参考面板 / RAG / 训练集）就是为 ② 准备的。所以「换模型」不是另起炉灶，而是<strong>验证「知识增强」是否必要的对照组</strong>。</p></blockquote>
+<h3>7.2 评测方案骨架（可直接执行，也是作品集第 6 页的素材）</h3>
+<p><strong>评测集</strong>：从 50 张已校正图里固定抽 10–15 张（覆盖山花 / 柱式 / 窗 / 入口 / 装饰线脚，含 2–3 张遮挡或斜拍难例），由你人工标出构件金标准。<strong>注意：换模型时 prompt 词表必须保持 47 项紧凑格式</strong>，否则会重新触发 §3.8 的 thinking 死循环——这条约束本身就是评测要控制的变量。</p>
+<p><strong>指标（四维，全部可量化）</strong>：</p>
+<div class="tablewrap"><table><thead><tr><th>维度</th><th>指标</th><th>为什么重要</th></tr></thead><tbody><tr><td>效果</td><td>构件召回率 / 误报率（对照金标准）、草稿采纳率（人工不改动的框占比）</td><td>直接决定「省不省人工」</td></tr><tr><td>稳定性</td><td>同图重跑 3 次的框数波动、IoU 一致性</td><td>专业场景要可复现，波动大就不能当判定者</td></tr><tr><td>效率</td><td>单张推理延迟、0 框失败率</td><td>无 GPU 环境下决定可不可用</td></tr><tr><td>合规/成本</td><td>是否支持本地部署、显存/内存占用、是否需上传云端</td><td>文保/规划场景是<strong>一票否决项</strong></td></tr></tbody></table></div>
+<p><strong>候选模型分三组</strong>（保持对照意义，而不是随便挑几个）：</p>
+<ul><li>本地小模型组：<code>qwen3-vl:4b</code>（基线）、更大参数的本地 VLM（验证「参数量」假设）</li><li>本地结构优化组：同一模型 + 构件图谱 few-shot / 精简词表（验证「知识增强」假设）</li><li>云端强模型组（<strong>仅用于对照研究，注意照片出域问题</strong>）：若必须用云端，只用公开/脱敏样例图跑，并在作品集里说明「未用于真实田野数据」——这反而能体现你的合规意识</li></ul>
+<p><strong>决策矩阵</strong>：每个模型 × 四维指标打一行，最后写一页结论：「在 <strong> 指标上，</strong> 模型最优；但受 <strong> 约束（合规/延迟），最终选型为 </strong>；若 __ 则转向知识增强路线」。<strong>这一页就是 PM 的选型产出，比代码值钱。</strong></p>
+<h3>7.3 【成品 C】做完横向评测后的简历写法（【预期】，现在勿用）</h3>
+<blockquote><p>⚠️ 以下全部为<strong>完成后</strong>的写法，带 <code>〔实测 __〕</code> 的必须换成真数字；结论若不成立，按 7.4 的诚实写法改。</p></blockquote>
+<pre><code>· 模型选型：针对构件识别缺口，构建 〔__ 张〕统一评测集与「召回率 / 坐标稳定性 / 延迟 / 部署合规」
+  四维指标，横向评测 〔__ 个〕VLM 并输出决策矩阵；实测 〔__〕 模型草稿采纳率由 〔__%〕 提升至 〔__%〕，
+  据此完成选型并沉淀可复用的模型评测流程。
+· 关键结论：验证「单纯增大参数量对细粒度构件语义提升有限 〔或：显著〕」，
+  据此将产品路线调整为 〔知识增强 / 数据飞轮 / 专用检测器〕，避免无效的模型堆叠。</code></pre>
+<p><strong>三种时态，别用错</strong>：</p>
+<div class="tablewrap"><table><thead><tr><th>阶段</th><th>可写句式</th><th>能否现在用</th></tr></thead><tbody><tr><td><strong>现在（已发生）</strong></td><td>「以 5 组对照实验定位模型能力边界，建立评测基线，并设计可插拔适配层支撑后续选型」</td><td>✅ <strong>能，且已写入成品 A</strong></td></tr><tr><td><strong>进行中（若已启动评测）</strong></td><td>「正以统一评测集开展多模型横向评测，比较构件召回率、坐标稳定性与本地部署可行性」</td><td>⚠️ 仅当确实已开始跑，且简历可标注「在研」</td></tr><tr><td><strong>完成后（预期）</strong></td><td>「横向评测 N 个 VLM，输出决策矩阵并完成选型，草稿采纳率提升至 X%」</td><td>❌ 现在不能写，见成品 C</td></tr></tbody></table></div>
+<h3>7.4 如果换了模型还是不行：这是最值钱的结论，别藏</h3>
+<p>若实测发现「更大模型对细粒度构件仍不可靠」，<strong>不要当成项目失败</strong>，直接写成技术选型判断：</p>
+<blockquote><p>「横向评测表明单纯增大模型参数量无法弥合专业构件语义鸿沟，据此将产品重心从『换模型』转向『给模型补知识』——以构件图谱提供 few-shot 参考、以人工复核沉淀训练数据，形成数据飞轮。」</p></blockquote>
+<p>这句话在面试官眼里是<strong>高级判断</strong>：你没有被「更大模型 = 更好」的惯性带跑，而是用实验否证了一个假设，并据此调整产品路线。这比「我换了个更强的模型，效果变好了」有分量得多。</p>
+<h3>7.5 一句提醒</h3>
+<p>「尝试几种大模型」是<strong>你的下一步计划</strong>，不是已完成成果。所以这一轮我没有把它写进简历正文，只写了<strong>你为它已经做好的准备</strong>（对照实验、能力边界判断、可插拔适配层、评测基线）——这些是真实发生、且恰恰证明你具备选型能力的东西。等评测真跑完，再用成品 C 替换，简历就完成了一次由数据驱动的迭代。<strong>这个过程本身，就是你面试时最该讲的「产品迭代」故事。</strong></p>
+<blockquote><p>本文成品 A 的所有数字均来自 <code>HANDOFF.md</code> v0.5 实测记录；成品 B、C 全部为预期，未实测不得写入简历。</p></blockquote></div>
+<div class="footer">HeritageLens · 骑楼立面风格智能识别 ｜ 作品集演示材料 ｜ 照片与数据不出本机</div>
+</div></body></html>
