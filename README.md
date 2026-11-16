@@ -4,7 +4,7 @@
 >
 > 核心思路：让机器做构件识别的「脏活」，把风格的解释权留给研究者。
 
-在线预览：**https://zhangwenxuan687-beep.github.io/**
+在线预览：**https://zhangwenxuan687-beep.github.io/Heritage-Lens/**
 
 ![HeritageLens 作品集门户](assets/preview.png)
 
@@ -29,16 +29,16 @@ HeritageLens 把这条链路重新组织成一套**「机器出草稿 + 人工�
 
 站点由一张门户页串起全部内容，打开主页即可逐页进入：
 
-| 页面 | 地址 | 内容 |
-|---|---|---|
-| 🏠 项目门户 | `/` | 项目全貌与导航 |
-| ▶️ 交互演示 | `/demo.html` | 一张立面照片，走完「AI 识别 → 人工复核 → 风格初判 → 自动总结」全流程 |
-| ▦️ 前端工作台 | `/workbench.html` | 研究级单文件工具：8 个视图、正立面校正、labelme 互通、构件图谱、证据链推理与数据导出 |
-| ⚙️ 后端源码 | `/backend.html` | 7 个 Python 脚本源码存档：Ollama 转发、VLM 预标注、批量校正、谱系分析等 |
-| 📋 产品 PRD | `/prd.html` | 产品定位、目标用户、痛点假设、功能范围与路线图 |
-| ◇️ 技术方案 | `/architecture.html` | 系统架构、能力边界、可插拔模型适配层、推理算法与数据流 |
-| ✅ 测试验证 | `/testing.html` | 效率 / 质量 / 可用性 / 合规四维指标体系与对照实验设计 |
-| ★ 项目总结 | `/star.html` | STAR 结构的项目叙事，一页读懂项目做了什么、难点在哪 |
+| 页面 | 内容 |
+|---|---|
+| [🏠 项目门户](https://zhangwenxuan687-beep.github.io/Heritage-Lens/) | 项目全貌与导航 |
+| [▶️ 交互演示](https://zhangwenxuan687-beep.github.io/Heritage-Lens/demo.html) | 一张立面照片，走完「AI 识别 → 人工复核 → 风格初判 → 自动总结」全流程 |
+| [▦️ 前端工作台](https://zhangwenxuan687-beep.github.io/Heritage-Lens/workbench.html) | 研究级单文件工具：8 个视图、正立面校正、labelme 互通、构件图谱、证据链推理与数据导出 |
+| [⚙️ 后端源码](https://zhangwenxuan687-beep.github.io/Heritage-Lens/backend.html) | 7 个 Python 脚本源码存档：Ollama 转发、VLM 预标注、批量校正、谱系分析等 |
+| [📋 产品 PRD](https://zhangwenxuan687-beep.github.io/Heritage-Lens/prd.html) | 产品定位、目标用户、痛点假设、功能范围与路线图 |
+| [◇️ 技术方案](https://zhangwenxuan687-beep.github.io/Heritage-Lens/architecture.html) | 系统架构、能力边界、可插拔模型适配层、推理算法与数据流 |
+| [✅ 测试验证](https://zhangwenxuan687-beep.github.io/Heritage-Lens/testing.html) | 效率 / 质量 / 可用性 / 合规四维指标体系与对照实验设计 |
+| [★ 项目总结](https://zhangwenxuan687-beep.github.io/Heritage-Lens/star.html) | STAR 结构的项目叙事，一页读懂项目做了什么、难点在哪 |
 
 ---
 
